@@ -40,7 +40,14 @@ int _background_thread_running(bool is_running, int idnum, void * vptr) {
 
 + (id)getObjectForPacket:(MLINK)link
 {
-	
+	switch (MLGetType(stdlink)) {
+		case <#constant#>:
+			<#statements#>
+			break;
+			
+		default:
+			break;
+	}
 }
 
 - (id)init

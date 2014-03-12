@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		428B82BD18CFE3EE00865D7D /* MathSymbol.m in Sources */ = {isa = PBXBuildFile; fileRef = 428B82BC18CFE3EE00865D7D /* MathSymbol.m */; };
 		428FCF8F18CEA6A900499CD4 /* MSTransientDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 428FCF8E18CEA6A900499CD4 /* MSTransientDelegate.m */; };
 		428FCF9218CECA9B00499CD4 /* MSCommandDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 428FCF9118CECA9B00499CD4 /* MSCommandDelegate.m */; };
 		42AEE4ED18C851C400162633 /* main.tm in Sources */ = {isa = PBXBuildFile; fileRef = 42FFC8FB18C8408A00C58E21 /* main.tm */; };
@@ -45,6 +46,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		428B82BB18CFE3EE00865D7D /* MathSymbol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MathSymbol.h; sourceTree = "<group>"; };
+		428B82BC18CFE3EE00865D7D /* MathSymbol.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MathSymbol.m; sourceTree = "<group>"; };
 		428FCF8A18CE96DB00499CD4 /* libMLi3.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libMLi3.a; path = "../../../../../../Applications/Mathematica.app/SystemFiles/Links/MathLink/DeveloperKit/MacOSX-x86-64/CompilerAdditions/libMLi3.a"; sourceTree = "<group>"; };
 		428FCF8C18CEA64600499CD4 /* MSDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSDelegate.h; sourceTree = "<group>"; };
 		428FCF8D18CEA6A900499CD4 /* MSTransientDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSTransientDelegate.h; sourceTree = "<group>"; };
@@ -104,6 +107,8 @@
 				428FCF9118CECA9B00499CD4 /* MSCommandDelegate.m */,
 				42EB6C7118CED16200F96BF1 /* MathSpice.h */,
 				42EB6C7218CED16200F96BF1 /* MathSpice.m */,
+				428B82BB18CFE3EE00865D7D /* MathSymbol.h */,
+				428B82BC18CFE3EE00865D7D /* MathSymbol.m */,
 			);
 			path = MathSpice;
 			sourceTree = "<group>";
@@ -173,6 +178,7 @@
 				42EB6C7318CED16200F96BF1 /* MathSpice.m in Sources */,
 				428FCF9218CECA9B00499CD4 /* MSCommandDelegate.m in Sources */,
 				428FCF8F18CEA6A900499CD4 /* MSTransientDelegate.m in Sources */,
+				428B82BD18CFE3EE00865D7D /* MathSymbol.m in Sources */,
 				42AEE4ED18C851C400162633 /* main.tm in Sources */,
 				42FFC8E918C83F0400C58E21 /* main.m in Sources */,
 			);
