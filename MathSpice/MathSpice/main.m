@@ -10,29 +10,51 @@
  *   In[1]:= link = Install["portname", LinkMode->Connect]
  */
 
-#include "mathlink.h"
+#include <stdbool.h>
+#include <stdio.h>
+
+#include <mathlink.h>
+
 #import "MathSpice.h"
+#import "MSCommandDelegate.h"
+#import "MSTransientDelegate.h"
 
-extern char * spice_exec(const char * cmd);
+extern void spice_exec(void);
+extern void spice_data(void);
+extern void spice_tran(void);
+extern void spice_ac(void);
+extern void spice_dc(void);
 
-static MathSpice * ms = nil;
+static MathSpice * ms;
 
-int main(int argc, char* argv[])
+int main(int argc, char * argv[])
 {
 	int ret = 0;
 	
 	ms = [MathSpice new];
-	[ms launch];
 	ret = MLMain(argc, argv);
-	[ms terminate];
 	
 	return ret;
 }
 
-char * spice_exec(const char * cmd)
+void spice_exec(void)
 {
-	[ms run:@(cmd)];
-	sleep(1);
-	return ms.popData.bytes;
+	ms.delegate = [MSCommandDelegate command];
+	[ms execute];
 }
 
+void spice_data(void) {
+	
+}
+
+void spice_tran(void) {
+	
+}
+
+void spice_ac(void) {
+	
+}
+
+void spice_dc(void) {
+	
+}

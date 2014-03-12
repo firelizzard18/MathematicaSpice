@@ -7,10 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		428FCF8F18CEA6A900499CD4 /* MSTransientDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 428FCF8E18CEA6A900499CD4 /* MSTransientDelegate.m */; };
+		428FCF9218CECA9B00499CD4 /* MSCommandDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 428FCF9118CECA9B00499CD4 /* MSCommandDelegate.m */; };
 		42AEE4ED18C851C400162633 /* main.tm in Sources */ = {isa = PBXBuildFile; fileRef = 42FFC8FB18C8408A00C58E21 /* main.tm */; };
-		42AEE4F918C856B000162633 /* libMLi3.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 42AEE4EF18C8527600162633 /* libMLi3.a */; };
 		42AEE4FB18C856BA00162633 /* libstdc++.6.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 42AEE4FA18C856B900162633 /* libstdc++.6.dylib */; };
-		42AEE4FE18C85FC100162633 /* MathSpice.m in Sources */ = {isa = PBXBuildFile; fileRef = 42AEE4FD18C85FC100162633 /* MathSpice.m */; };
+		42EB6C7318CED16200F96BF1 /* MathSpice.m in Sources */ = {isa = PBXBuildFile; fileRef = 42EB6C7218CED16200F96BF1 /* MathSpice.m */; };
 		42FFC8E918C83F0400C58E21 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 42FFC8E818C83F0400C58E21 /* main.m */; };
 		42FFC8EB18C83F0400C58E21 /* MathSpice.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = 42FFC8EA18C83F0400C58E21 /* MathSpice.1 */; };
 		42FFC8F818C83F7900C58E21 /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42FFC8F718C83F7900C58E21 /* CoreFoundation.framework */; };
@@ -44,15 +45,18 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		42AEE4EF18C8527600162633 /* libMLi3.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libMLi3.a; path = "../../../../../../../Applications/Mathematica.app/SystemFiles/Links/MathLink/DeveloperKit/MacOSX-x86-64/CompilerAdditions/libMLi3.a"; sourceTree = "<group>"; };
-		42AEE4F018C8527600162633 /* mathlink.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = mathlink.framework; path = "../../../../../../../Applications/Mathematica.app/SystemFiles/Links/MathLink/DeveloperKit/MacOSX-x86-64/CompilerAdditions/mathlink.framework"; sourceTree = "<group>"; };
+		428FCF8A18CE96DB00499CD4 /* libMLi3.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libMLi3.a; path = "../../../../../../Applications/Mathematica.app/SystemFiles/Links/MathLink/DeveloperKit/MacOSX-x86-64/CompilerAdditions/libMLi3.a"; sourceTree = "<group>"; };
+		428FCF8C18CEA64600499CD4 /* MSDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSDelegate.h; sourceTree = "<group>"; };
+		428FCF8D18CEA6A900499CD4 /* MSTransientDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSTransientDelegate.h; sourceTree = "<group>"; };
+		428FCF8E18CEA6A900499CD4 /* MSTransientDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSTransientDelegate.m; sourceTree = "<group>"; };
+		428FCF9018CECA9B00499CD4 /* MSCommandDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSCommandDelegate.h; sourceTree = "<group>"; };
+		428FCF9118CECA9B00499CD4 /* MSCommandDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSCommandDelegate.m; sourceTree = "<group>"; };
 		42AEE4FA18C856B900162633 /* libstdc++.6.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libstdc++.6.dylib"; path = "usr/lib/libstdc++.6.dylib"; sourceTree = SDKROOT; };
-		42AEE4FC18C85FC100162633 /* MathSpice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MathSpice.h; sourceTree = "<group>"; };
-		42AEE4FD18C85FC100162633 /* MathSpice.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MathSpice.m; sourceTree = "<group>"; };
+		42EB6C7118CED16200F96BF1 /* MathSpice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MathSpice.h; sourceTree = "<group>"; };
+		42EB6C7218CED16200F96BF1 /* MathSpice.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MathSpice.m; sourceTree = "<group>"; };
 		42FFC8E518C83F0400C58E21 /* MathSpice */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = MathSpice; sourceTree = BUILT_PRODUCTS_DIR; };
 		42FFC8E818C83F0400C58E21 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		42FFC8EA18C83F0400C58E21 /* MathSpice.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = MathSpice.1; sourceTree = "<group>"; };
-		42FFC8F418C83F5D00C58E21 /* mathlink.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = mathlink.h; path = "/Applications/Mathematica.app/SystemFiles/Links/MathLink/DeveloperKit/MacOSX-x86-64/CompilerAdditions/mathlink.h"; sourceTree = "<absolute>"; };
 		42FFC8F718C83F7900C58E21 /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
 		42FFC8FB18C8408A00C58E21 /* main.tm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = main.tm; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -64,7 +68,6 @@
 			files = (
 				42AEE4FB18C856BA00162633 /* libstdc++.6.dylib in Frameworks */,
 				42FFC8F818C83F7900C58E21 /* CoreFoundation.framework in Frameworks */,
-				42AEE4F918C856B000162633 /* libMLi3.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -74,7 +77,6 @@
 		42FFC8DC18C83F0400C58E21 = {
 			isa = PBXGroup;
 			children = (
-				42FFC8F118C83F2500C58E21 /* MathLink */,
 				42FFC8E718C83F0400C58E21 /* MathSpice */,
 				42FFC8F918C83F8200C58E21 /* Frameworks */,
 				42FFC8E618C83F0400C58E21 /* Products */,
@@ -92,28 +94,24 @@
 		42FFC8E718C83F0400C58E21 /* MathSpice */ = {
 			isa = PBXGroup;
 			children = (
-				42FFC8F418C83F5D00C58E21 /* mathlink.h */,
 				42FFC8E818C83F0400C58E21 /* main.m */,
 				42FFC8FB18C8408A00C58E21 /* main.tm */,
 				42FFC8EA18C83F0400C58E21 /* MathSpice.1 */,
-				42AEE4FC18C85FC100162633 /* MathSpice.h */,
-				42AEE4FD18C85FC100162633 /* MathSpice.m */,
+				428FCF8C18CEA64600499CD4 /* MSDelegate.h */,
+				428FCF8D18CEA6A900499CD4 /* MSTransientDelegate.h */,
+				428FCF8E18CEA6A900499CD4 /* MSTransientDelegate.m */,
+				428FCF9018CECA9B00499CD4 /* MSCommandDelegate.h */,
+				428FCF9118CECA9B00499CD4 /* MSCommandDelegate.m */,
+				42EB6C7118CED16200F96BF1 /* MathSpice.h */,
+				42EB6C7218CED16200F96BF1 /* MathSpice.m */,
 			);
 			path = MathSpice;
-			sourceTree = "<group>";
-		};
-		42FFC8F118C83F2500C58E21 /* MathLink */ = {
-			isa = PBXGroup;
-			children = (
-				42AEE4EF18C8527600162633 /* libMLi3.a */,
-				42AEE4F018C8527600162633 /* mathlink.framework */,
-			);
-			path = MathLink;
 			sourceTree = "<group>";
 		};
 		42FFC8F918C83F8200C58E21 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				428FCF8A18CE96DB00499CD4 /* libMLi3.a */,
 				42AEE4FA18C856B900162633 /* libstdc++.6.dylib */,
 				42FFC8F718C83F7900C58E21 /* CoreFoundation.framework */,
 			);
@@ -172,9 +170,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				42EB6C7318CED16200F96BF1 /* MathSpice.m in Sources */,
+				428FCF9218CECA9B00499CD4 /* MSCommandDelegate.m in Sources */,
+				428FCF8F18CEA6A900499CD4 /* MSTransientDelegate.m in Sources */,
 				42AEE4ED18C851C400162633 /* main.tm in Sources */,
 				42FFC8E918C83F0400C58E21 /* main.m in Sources */,
-				42AEE4FE18C85FC100162633 /* MathSpice.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -256,9 +256,20 @@
 					"$(inherited)",
 					"$(SYSTEM_APPS_DIR)/Mathematica.app/SystemFiles/Links/MathLink/DeveloperKit/MacOSX-x86-64/CompilerAdditions",
 				);
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					/usr/local/share/ngspice/include,
+					"$(SYSTEM_APPS_DIR)/Mathematica.app/SystemFiles/Links/MathLink/DeveloperKit/MacOSX-x86-64/CompilerAdditions",
+				);
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SYSTEM_APPS_DIR)/Mathematica.app/SystemFiles/Links/MathLink/DeveloperKit/MacOSX-x86-64/CompilerAdditions",
+					/usr/local/lib,
+				);
+				OTHER_LDFLAGS = (
+					"-lngspice",
+					"-lMLi3",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -271,9 +282,20 @@
 					"$(inherited)",
 					"$(SYSTEM_APPS_DIR)/Mathematica.app/SystemFiles/Links/MathLink/DeveloperKit/MacOSX-x86-64/CompilerAdditions",
 				);
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					/usr/local/share/ngspice/include,
+					"$(SYSTEM_APPS_DIR)/Mathematica.app/SystemFiles/Links/MathLink/DeveloperKit/MacOSX-x86-64/CompilerAdditions",
+				);
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SYSTEM_APPS_DIR)/Mathematica.app/SystemFiles/Links/MathLink/DeveloperKit/MacOSX-x86-64/CompilerAdditions",
+					/usr/local/lib,
+				);
+				OTHER_LDFLAGS = (
+					"-lngspice",
+					"-lMLi3",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};

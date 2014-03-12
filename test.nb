@@ -1,0 +1,179 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 9.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       157,          7]
+NotebookDataLength[      5960,        170]
+NotebookOptionsPosition[      5132,        136]
+NotebookOutlinePosition[      5511,        153]
+CellTagsIndexPosition[      5468,        150]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"link", "=", 
+   RowBox[{"Install", "[", 
+    RowBox[{"LinkConnect", "[", 
+     RowBox[{"\"\<53838@192.168.0.101,53839@192.168.0.101\>\"", ",", 
+      RowBox[{"LinkProtocol", "\[Rule]", "\"\<TCPIP\>\""}]}], "]"}], "]"}]}], 
+  ";"}]], "Input",
+ CellChangeTimes->{{3.60349039804191*^9, 3.603490404684083*^9}, {
+   3.603490495202318*^9, 3.603490504768621*^9}, {3.6034914453557377`*^9, 
+   3.603491447014142*^9}, 3.603491987819067*^9, 3.603500938766954*^9, {
+   3.6035010387542057`*^9, 3.603501040512155*^9}, 3.6035011480490017`*^9, 
+   3.6035012876527967`*^9, 3.603504395293977*^9, 3.6035044647374067`*^9, 
+   3.603504596997181*^9, 3.603504964515959*^9, 3.603505280577189*^9, 
+   3.603505353438911*^9, 3.603505518018368*^9, 3.603505620111375*^9, 
+   3.603505906039105*^9, 3.603505993636591*^9, 3.603506102250258*^9, 
+   3.603506194878819*^9, {3.6035062909169073`*^9, 3.603506319347714*^9}, 
+   3.603506629394672*^9, 3.603506738319393*^9, {3.6035067834698467`*^9, 
+   3.603506841628332*^9}, 3.603507618229968*^9, 3.603507853991221*^9, 
+   3.6035080660173693`*^9, 3.60350811961588*^9}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"LinkPatterns", "[", "link", "]"}]], "Input",
+ CellChangeTimes->{{3.603505529641777*^9, 3.603505532489058*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  TagBox[
+   RowBox[{"MathSpice`SpiceExec", "[", "Global`cmd_String", "]"}],
+   HoldForm], "}"}]], "Output",
+ CellChangeTimes->{3.6035055332076883`*^9}]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Uninstall", "[", "link", "]"}], ";"}]], "Input",
+ CellChangeTimes->{3.6035010430729647`*^9}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"MathSpice`SpiceExec", "[", 
+  "\"\<source \
+/Users/firelizzard/Documents/Programming/MathematicaSpice/thing.net\>\"", 
+  "]"}]], "Input",
+ CellChangeTimes->{{3.603490545283402*^9, 3.603490570198674*^9}}],
+
+Cell[BoxData["\<\"The command completed successfully\"\>"], "Output",
+ CellChangeTimes->{
+  3.603490617465398*^9, 3.6034914990697737`*^9, 3.603492002252286*^9, 
+   3.603500959358432*^9, 3.6035010676963043`*^9, 3.60350113161701*^9, 
+   3.6035012964790487`*^9, 3.603504422676365*^9, 3.603505703038023*^9, 
+   3.603506256894853*^9, 3.6035063050912113`*^9, 3.6035063413087683`*^9, 
+   3.603506639623109*^9, 3.6035067445892553`*^9, 3.603506793440065*^9, {
+   3.603506823778989*^9, 3.6035068515299273`*^9}, 3.603507620992711*^9, 
+   3.603508129676647*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"MathSpice`SpiceExec", "[", "\"\<tran 1n 52u .9u\>\"", 
+  "]"}]], "Input",
+ CellChangeTimes->{{3.603490650807304*^9, 3.603490668643972*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  StyleBox[
+   RowBox[{"MathSpice`Warn", "::", "spice"}], "MessageName"], 
+  RowBox[{
+  ":", " "}], "\<\"\[NoBreak]\\!\\(\\\"v1: no DC value, transient time 0 \
+value used\\\"\\)\[NoBreak]\"\>"}]], "Message", "MSG",
+ CellChangeTimes->{
+  3.6035076273033867`*^9, 3.6035077025672483`*^9, 3.603507844861709*^9, 
+   3.603507881900255*^9, {3.603508081600665*^9, 3.603508131753909*^9}}],
+
+Cell[BoxData["\<\"The command completed successfully\"\>"], "Output",
+ CellChangeTimes->{
+  3.6034911623097773`*^9, 3.603491520156004*^9, 3.603492315458522*^9, 
+   3.603501059506792*^9, 3.603507628130034*^9, 3.603507703451779*^9, 
+   3.6035078448636436`*^9, 3.6035078832634172`*^9, {3.6035080816020823`*^9, 
+   3.6035081326859426`*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"MathSpice`SpiceExec", "[", "\"\<asdf\>\"", "]"}]], "Input",
+ CellChangeTimes->{{3.60350130661793*^9, 3.603501308716857*^9}, {
+  3.603506043313518*^9, 3.603506046391415*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  StyleBox[
+   RowBox[{"MathSpice`Error", "::", "spice"}], "MessageName"], 
+  RowBox[{
+  ":", " "}], "\<\"\[NoBreak]\\!\\(\\\"asdf: no such command available in \
+ngspice\\\"\\)\[NoBreak]\"\>"}]], "Message", "MSG",
+ CellChangeTimes->{
+  3.603504536142026*^9, 3.603504639563472*^9, 3.6035049698528633`*^9, 
+   3.603505307969634*^9, 3.6035054226954403`*^9, 3.603505562209548*^9, 
+   3.6035057426526327`*^9, 3.603505998357291*^9, {3.6035060587894506`*^9, 
+   3.603506065847993*^9}, 3.6035061063316107`*^9, 3.603506199111621*^9, 
+   3.603508125873074*^9}],
+
+Cell[BoxData["$Failed"], "Output",
+ CellChangeTimes->{
+  3.6035013089849167`*^9, 3.603504536144265*^9, 3.6035046395650597`*^9, 
+   3.603504969899379*^9, 3.603505307994248*^9, 3.6035054412090693`*^9, 
+   3.603505562210853*^9, 3.6035057426538897`*^9, 3.6035060179506817`*^9, {
+   3.603506062277308*^9, 3.603506065849287*^9}, 3.603506106332694*^9, 
+   3.603506199112837*^9, 3.6035081258742437`*^9}]
+}, Open  ]]
+},
+WindowSize->{740, 867},
+WindowMargins->{{378, Automatic}, {Automatic, 131}},
+ShowSelection->True,
+FrontEndVersion->"9.0 for Mac OS X x86 (32-bit, 64-bit Kernel) (January 25, \
+2013)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[557, 20, 1114, 19, 46, "Input"],
+Cell[CellGroupData[{
+Cell[1696, 43, 134, 2, 28, "Input"],
+Cell[1833, 47, 181, 5, 28, "Output"]
+}, Open  ]],
+Cell[2029, 55, 127, 3, 28, "Input"],
+Cell[CellGroupData[{
+Cell[2181, 62, 227, 5, 46, "Input"],
+Cell[2411, 69, 549, 8, 28, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[2997, 82, 163, 3, 28, "Input"],
+Cell[3163, 87, 404, 9, 21, "Message"],
+Cell[3570, 98, 336, 5, 28, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[3943, 108, 197, 3, 28, "Input"],
+Cell[4143, 113, 575, 12, 24, "Message"],
+Cell[4721, 127, 395, 6, 28, "Output"]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)

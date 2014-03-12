@@ -2,18 +2,21 @@
 //  MathSpice.h
 //  MathSpice
 //
-//  Created by Ethan Reesor on 3/6/14.
+//  Created by Ethan Reesor on 3/11/14.
 //  Copyright (c) 2014 Computing Eureka. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
+#import <mathlink/mathlink.h>
+
+#import "MSDelegate.h"
 
 @interface MathSpice : NSObject
 
-- (void)launch;
-- (void)terminate;
-- (void)run:(NSString *)cmd;
-- (NSData *)popData;
-- (NSData *)popError;
+@property id<MSDelegate> delegate;
+
++ (id)getObjectForPacket:(MLINK)link;
+
+- (void)execute;
 
 @end

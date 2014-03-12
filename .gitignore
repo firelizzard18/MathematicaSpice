@@ -1,4 +1,6 @@
 *~
 \#*\#
 *.swp
+*.xcworkspace
+xcuserdata
 .DS_Store
