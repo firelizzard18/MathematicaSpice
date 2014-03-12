@@ -11,6 +11,7 @@
 
 @protocol MSDelegate <NSObject>
 
+- (void)fail;
 - (BOOL)failed;
 
 - (void)run;
@@ -20,7 +21,6 @@
 - (int)receivedInitialData:(vecinfoall *)info;
 - (int)receivedData:(vecvaluesall *)values count:(NSUInteger)count;
 
-- (void)putFailureResponse;
 - (void)putResponse;
 
 @end

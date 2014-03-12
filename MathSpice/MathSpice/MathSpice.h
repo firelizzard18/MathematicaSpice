@@ -13,10 +13,15 @@
 
 @interface MathSpice : NSObject
 
-@property id<MSDelegate> delegate;
++ (id)getObjectForPacket;
++ (id)getObjectForPacketAndUnwrap;
++ (int)putPacketForObject:(id)obj;
++ (NSString *)descriptionOfObject:(id)obj;
++ (id)evaluateObject:(id)obj;
 
-+ (id)getObjectForPacket:(MLINK)link;
+- (void)execute:(id<MSDelegate>)delegate;
 
-- (void)execute;
++ (void)putError;
++ (void)putError:(NSString *)error withMessage:(NSString *)message;
 
 @end

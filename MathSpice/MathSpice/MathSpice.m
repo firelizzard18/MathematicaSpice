@@ -7,6 +7,15 @@
 //
 
 #import "MathSpice.h"
+#import "MathObject.h"
+#import "MathSymbol.h"
+#import "MathFunction.h"
+
+@interface MathSpice ()
+
+- (id<MSDelegate>)delegate;
+
+@end
 
 int _send_char(char * msgstr, int idnum, void * vptr) {
 	MathSpice * self = (__bridge id)vptr;
@@ -36,18 +45,106 @@ int _background_thread_running(bool is_running, int idnum, void * vptr) {
 	return 0;
 }
 
-@implementation MathSpice
+@implementation MathSpice {
+	id<MSDelegate> _delegate;
+}
 
-+ (id)getObjectForPacket:(MLINK)link
++ (id)getObjectForPacket
 {
-	switch (MLGetType(stdlink)) {
-		case <#constant#>:
-			<#statements#>
-			break;
+	int t;
+	switch (t = MLGetType(stdlink)) {
+		case MLTKNULL: {
+			return [NSNull null];
+		}
+		
+		case MLTKINT: {
+			long tmp;
+			if (!MLGetLongInteger(stdlink, &tmp))
+				goto failed;
+			return @(tmp);
+		}
+		
+		case MLTKREAL: {
+			double tmp;
+			MLGetReal(stdlink, &tmp);
+			return @(tmp);
+		}
+			
+		case MLTKSTR: {
+			const char * tmp;
+			MLGetString(stdlink, &tmp);
+			return @(tmp);
+		}
+			
+		case MLTKSYM:
+			return [MathSymbol get];
+			
+		case MLTKFUNC:
+			return [MathFunction get];
 			
 		default:
-			break;
+			return nil;
 	}
+	
+failed:
+	[self.class putError];
+	return nil;
+}
+
++ (id)getObjectForPacketAndUnwrap
+{
+	id obj = [self getObjectForPacket];
+	if ([obj isKindOfClass:MathFunction.class] && [[(MathFunction *)obj name] isEqualToString:@"ReturnPacket"])
+		obj = [(MathFunction *)obj objectAtIndex:0];
+	return obj;
+}
+
++ (int)putPacketForObject:(id)obj
+{
+	if ([obj conformsToProtocol:@protocol(MathObject)])
+		return [(id<MathObject>)obj put];
+	
+	else if ([obj isKindOfClass:NSNull.class])
+		return MLPutSymbol(stdlink, "Null");
+	
+	else if ([obj isKindOfClass:NSString.class])
+		return MLPutString(stdlink, [(NSString *)obj UTF8String]);
+	
+	else if ([obj isKindOfClass:NSNumber.class])
+		return MLPutReal(stdlink, [(NSNumber *)obj doubleValue]);
+	
+	else
+		return -1;
+}
+
++ (NSString *)descriptionOfObject:(id)obj
+{
+	if ([obj conformsToProtocol:@protocol(MathObject)])
+		return [(id<NSObject>)obj description];
+	
+	else if ([obj isKindOfClass:NSNull.class])
+		return @"Null";
+	
+	else if ([obj isKindOfClass:NSString.class])
+		return [NSString stringWithFormat:@"\"%@\"", obj];
+	
+	else if ([obj isKindOfClass:NSNumber.class])
+		return [(id<NSObject>)obj description];
+	
+	else
+		return nil;
+}
+
++ (id)evaluateObject:(id)obj
+{
+	NSString * desc = [self descriptionOfObject:obj];
+	if (!desc)
+		return nil;
+	
+	if (!MLEvaluate(stdlink, (char *)desc.UTF8String) && !MLNextPacket(stdlink))
+		return nil;
+	
+	return [self getObjectForPacketAndUnwrap];
 }
 
 - (id)init
@@ -66,17 +163,56 @@ int _background_thread_running(bool is_running, int idnum, void * vptr) {
 	return self;
 }
 
-- (void)execute
+- (id<MSDelegate>)delegate
 {
+	return _delegate;
+}
+
+- (void)execute:(id<MSDelegate>)delegate
+{
+	_delegate = delegate;
+	
 	[self.delegate run];
-	if (self.delegate.failed)
-		[self.delegate putFailureResponse];
+	if (!self.delegate || self.delegate.failed)
+		[self putFailureResponse];
 	[self.delegate putResponse];
+}
+
+- (void)putFailureResponse
+{
+	if (!MLNewPacket(stdlink)) {
+		[self.delegate fail];
+		[self.class putError];
+	}
+	if (!MLPutSymbol(stdlink, "$Failed")) {
+		[self.delegate fail];
+		[self.class putError];
+	}
 }
 
 - (void)dealloc
 {
-	self.delegate = nil;
+	_delegate = nil;
+}
+
++ (void)putError
+{
+	NSString * message = @(MLErrorMessage(stdlink));
+	MLClearError(stdlink);
+	[self putError:@"MathSpice`Error::mlink" withMessage:message];
+}
+
++ (void)putError:(NSString *)error withMessage:(NSString *)message
+{
+	NSString * eval;
+	if (message)
+		eval = [NSString stringWithFormat:@"Message[%@, \"%@\"]", error, message];
+	else
+		eval = [NSString stringWithFormat:@"Message[%@]", error];
+	
+	MLNewPacket(stdlink);
+	MLEvaluate(stdlink, (char *)eval.UTF8String);
+	MLNextPacket(stdlink);
 }
 
 @end

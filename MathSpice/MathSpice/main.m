@@ -39,8 +39,7 @@ int main(int argc, char * argv[])
 
 void spice_exec(void)
 {
-	ms.delegate = [MSCommandDelegate command];
-	[ms execute];
+	[ms execute:[MSCommandDelegate command]];
 }
 
 void spice_data(void) {
@@ -48,7 +47,7 @@ void spice_data(void) {
 }
 
 void spice_tran(void) {
-	
+	[ms execute:[MSTransientDelegate command]];
 }
 
 void spice_ac(void) {

@@ -8,13 +8,23 @@
 
 #import "MathSymbol.h"
 
+#import <mathlink/mathlink.h>
+
+#import "MathSpice.h"
+
 @implementation MathSymbol {
 	NSString * _backing;
 }
 
-+ (instancetype)symbolWithString:(NSString *)aString
++ (instancetype)get
 {
-	return [[self alloc] initWithString:aString];
+	const char * tmp;
+	MLGetSymbol(stdlink, &tmp);
+	NSString * sym = @(tmp);
+	if ([sym isEqualToString:@"Null"])
+		return (MathSymbol *)[NSNull null];
+	else
+		return [[self alloc] initWithString:sym];
 }
 
 - (id)initWithString:(NSString *)aString
@@ -37,6 +47,11 @@
 - (void)getCharacters:(unichar *)buffer range:(NSRange)aRange
 {
 	[_backing getCharacters:buffer range:aRange];
+}
+
+- (int)put
+{
+	return MLPutSymbol(stdlink, _backing.UTF8String);
 }
 
 @end

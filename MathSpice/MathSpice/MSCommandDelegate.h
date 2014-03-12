@@ -18,8 +18,5 @@
 + (instancetype)commandWithCommand:(NSString *)command;
 + (instancetype)command;
 - (id)initWithCommand:(NSString *)command;
-- (void)fail;
-- (void)putError;
-- (void)putError:(NSString *)error withMessage:(NSString *)message;
 
 @end

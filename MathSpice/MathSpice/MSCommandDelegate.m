@@ -8,6 +8,8 @@
 
 #import "MSCommandDelegate.h"
 
+#import "MathSpice.h"
+
 @implementation MSCommandDelegate {
 	NSString * _command;
 }
@@ -57,7 +59,7 @@ done:
 	return 0;
 	
 err:
-	[self putError:error withMessage:message];
+	[MathSpice putError:error withMessage:message];
 	goto  done;
 }
 
@@ -84,35 +86,6 @@ err:
 - (void)fail
 {
 	_failed = YES;
-}
-
-- (void)putError
-{
-	NSString * message = @(MLErrorMessage(stdlink));
-	[self fail];
-	MLClearError(stdlink);
-	[self putError:@"MathSpice`Error::mlink" withMessage:message];
-}
-
-- (void)putError:(NSString *)error withMessage:(NSString *)message
-{
-	NSString * eval;
-	if (message)
-		eval = [NSString stringWithFormat:@"Message[%@, \"%@\"]", error, message];
-	else
-		eval = [NSString stringWithFormat:@"Message[%@]", error];
-	
-	MLNewPacket(stdlink);
-	MLEvaluate(stdlink, (char *)eval.UTF8String);
-	MLNextPacket(stdlink);
-}
-
-- (void)putFailureResponse
-{
-	if (!MLNewPacket(stdlink))
-		[self putError];
-	if (!MLPutSymbol(stdlink, "$Failed"))
-		[self putError];
 }
 
 - (void)putResponse

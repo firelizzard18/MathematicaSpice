@@ -1,5 +1,5 @@
 //
-//  MathSymbol.h
+//  MathObject.h
 //  MathSpice
 //
 //  Created by Ethan Reesor on 3/11/14.
@@ -8,8 +8,9 @@
 
 #import <Foundation/Foundation.h>
 
-#import "MathObject.h"
+@protocol MathObject <NSObject>
 
-@interface MathSymbol : NSString <MathObject>
++ (instancetype)get;
+- (int)put;
 
 @end
