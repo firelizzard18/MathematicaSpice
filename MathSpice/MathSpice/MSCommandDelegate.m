@@ -7,12 +7,15 @@
 //
 
 #import "MSCommandDelegate.h"
-
 #import "MathSpice.h"
 
-@implementation MSCommandDelegate {
+@interface MSCommandDelegate () {
 	NSString * _command;
 }
+
+@end
+
+@implementation MSCommandDelegate
 
 + (instancetype)commandWithCommand:(NSString *)command
 {

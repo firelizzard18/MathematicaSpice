@@ -10,9 +10,13 @@
 #import "MathFunction.h"
 #import "MathSpice.h"
 
-@implementation MathFunction {
+@interface MathFunction () {
 	NSArray * _backing;
 }
+
+@end
+
+@implementation MathFunction
 
 + (instancetype)get
 {

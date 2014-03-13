@@ -7,7 +7,6 @@
 //
 
 #import "include.h"
-
 #import "MathObject.h"
 
 @interface MathFunction : NSArray <MathObject>

@@ -7,15 +7,18 @@
 //
 
 #import "MSTransientDelegate.h"
-
 #import "MathSpice.h"
 #import "MathSymbol.h"
 #import "MathFunction.h"
 
-@implementation MSTransientDelegate {
+@interface MSTransientDelegate () {
 	MathFunction * _initialData;
 	NSMutableArray * _data;
 }
+
+@end
+
+@implementation MSTransientDelegate
 
 + (instancetype)command
 {

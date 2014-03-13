@@ -7,7 +7,6 @@
 //
 
 #import "include.h"
-
 #import "MSDelegate.h"
 
 @interface MSCommandDelegate : NSObject <MSDelegate>

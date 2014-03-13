@@ -7,7 +7,6 @@
 //
 
 #import "include.h"
-
 #import "MSCommandDelegate.h"
 
 @interface MSTransientDelegate : MSCommandDelegate <MSDelegate>

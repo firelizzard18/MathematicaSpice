@@ -7,7 +7,6 @@
 //
 
 #import "include.h"
-
 #import "MathObject.h"
 
 @interface MathSymbol : NSString <MathObject>

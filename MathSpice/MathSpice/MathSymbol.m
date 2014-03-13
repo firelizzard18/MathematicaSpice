@@ -6,15 +6,17 @@
 //  Copyright (c) 2014 Computing Eureka. All rights reserved.
 //
 
+#import "include.h"
 #import "MathSymbol.h"
-
-#import <mathlink/mathlink.h>
-
 #import "MathSpice.h"
 
-@implementation MathSymbol {
+@interface MathSymbol () {
 	NSString * _backing;
 }
+
+@end
+
+@implementation MathSymbol
 
 + (instancetype)get
 {

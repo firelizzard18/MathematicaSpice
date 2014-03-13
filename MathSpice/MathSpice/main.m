@@ -13,7 +13,6 @@
 #import <stdbool.h>
 #import <stdio.h>
 #import "include.h"
-
 #import "MathSpice.h"
 #import "MSCommandDelegate.h"
 #import "MSTransientDelegate.h"
