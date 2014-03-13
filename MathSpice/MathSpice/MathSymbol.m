@@ -10,12 +10,6 @@
 #import "MathSymbol.h"
 #import "MathSpice.h"
 
-@interface MathSymbol () {
-	NSString * _backing;
-}
-
-@end
-
 @implementation MathSymbol
 
 + (instancetype)get

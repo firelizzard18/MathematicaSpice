@@ -10,6 +10,7 @@
 #import "MathObject.h"
 #import "MathSymbol.h"
 #import "MathFunction.h"
+#import "MSDelegate.h"
 
 @interface MathSpice ()
 
@@ -45,9 +46,7 @@ int _background_thread_running(bool is_running, int idnum, void * vptr) {
 	return 0;
 }
 
-@implementation MathSpice {
-	id<MSDelegate> _delegate;
-}
+@implementation MathSpice
 
 + (id)getObjectForPacket
 {

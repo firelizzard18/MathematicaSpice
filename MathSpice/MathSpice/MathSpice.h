@@ -7,9 +7,12 @@
 //
 
 #import "include.h"
-#import "MSDelegate.h"
 
-@interface MathSpice : NSObject
+@protocol MSDelegate;
+
+@interface MathSpice : NSObject {
+	id<MSDelegate> _delegate;
+}
 
 + (id)getObjectForPacket;
 + (id)getObjectForPacketAndUnwrap;

@@ -9,6 +9,11 @@
 #import "include.h"
 #import "MSCommandDelegate.h"
 
-@interface MSTransientDelegate : MSCommandDelegate <MSDelegate>
+@class MathFunction;
+
+@interface MSTransientDelegate : MSCommandDelegate <MSDelegate> {
+	MathFunction * _initialData;
+	NSMutableArray * _data;
+}
 
 @end

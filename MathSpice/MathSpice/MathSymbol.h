@@ -9,6 +9,8 @@
 #import "include.h"
 #import "MathObject.h"
 
-@interface MathSymbol : NSString <MathObject>
+@interface MathSymbol : NSString <MathObject> {
+	NSString * _backing;
+}
 
 @end

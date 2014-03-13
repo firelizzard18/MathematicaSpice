@@ -9,7 +9,9 @@
 #import "include.h"
 #import "MathObject.h"
 
-@interface MathFunction : NSArray <MathObject>
+@interface MathFunction : NSArray <MathObject> {
+	NSArray * _backing;
+}
 
 @property (readonly) NSString * name;
 

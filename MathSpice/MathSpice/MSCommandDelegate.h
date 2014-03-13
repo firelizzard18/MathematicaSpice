@@ -9,7 +9,9 @@
 #import "include.h"
 #import "MSDelegate.h"
 
-@interface MSCommandDelegate : NSObject <MSDelegate>
+@interface MSCommandDelegate : NSObject <MSDelegate> {
+	NSString * _command;
+}
 
 @property (readonly) BOOL failed;
 
