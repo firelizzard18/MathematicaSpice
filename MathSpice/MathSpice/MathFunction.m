@@ -6,10 +6,8 @@
 //  Copyright (c) 2014 Computing Eureka. All rights reserved.
 //
 
+#import "include.h"
 #import "MathFunction.h"
-
-#import <mathlink/mathlink.h>
-
 #import "MathSpice.h"
 
 @implementation MathFunction {
