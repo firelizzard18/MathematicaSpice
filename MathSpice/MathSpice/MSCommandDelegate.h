@@ -6,8 +6,7 @@
 //  Copyright (c) 2014 Computing Eureka. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
-#include <mathlink.h>
+#import "include.h"
 
 #import "MSDelegate.h"
 

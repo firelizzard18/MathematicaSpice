@@ -58,6 +58,7 @@
 		428FCF8E18CEA6A900499CD4 /* MSTransientDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSTransientDelegate.m; sourceTree = "<group>"; };
 		428FCF9018CECA9B00499CD4 /* MSCommandDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSCommandDelegate.h; sourceTree = "<group>"; };
 		428FCF9118CECA9B00499CD4 /* MSCommandDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSCommandDelegate.m; sourceTree = "<group>"; };
+		429323F318D12DA300F48801 /* include.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = include.h; sourceTree = "<group>"; };
 		42AEE4FA18C856B900162633 /* libstdc++.6.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libstdc++.6.dylib"; path = "usr/lib/libstdc++.6.dylib"; sourceTree = SDKROOT; };
 		42EB6C7118CED16200F96BF1 /* MathSpice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MathSpice.h; sourceTree = "<group>"; };
 		42EB6C7218CED16200F96BF1 /* MathSpice.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MathSpice.m; sourceTree = "<group>"; };
@@ -101,6 +102,7 @@
 		42FFC8E718C83F0400C58E21 /* MathSpice */ = {
 			isa = PBXGroup;
 			children = (
+				429323F318D12DA300F48801 /* include.h */,
 				42FFC8E818C83F0400C58E21 /* main.m */,
 				42FFC8FB18C8408A00C58E21 /* main.tm */,
 				42FFC8EA18C83F0400C58E21 /* MathSpice.1 */,

@@ -10,10 +10,9 @@
  *   In[1]:= link = Install["portname", LinkMode->Connect]
  */
 
-#include <stdbool.h>
-#include <stdio.h>
-
-#include <mathlink.h>
+#import <stdbool.h>
+#import <stdio.h>
+#import "include.h"
 
 #import "MathSpice.h"
 #import "MSCommandDelegate.h"

@@ -6,8 +6,7 @@
 //  Copyright (c) 2014 Computing Eureka. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
-#import <ngspice/sharedspice.h>
+#import "include.h"
 
 @protocol MSDelegate <NSObject>
 

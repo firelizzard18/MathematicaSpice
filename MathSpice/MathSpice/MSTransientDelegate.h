@@ -6,7 +6,7 @@
 //  Copyright (c) 2014 Computing Eureka. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+#import "include.h"
 
 #import "MSCommandDelegate.h"
 
