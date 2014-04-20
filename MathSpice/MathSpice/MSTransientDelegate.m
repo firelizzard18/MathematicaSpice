@@ -141,17 +141,17 @@ error:
 
 - (int)receivedData:(vecvaluesall *)values count:(NSUInteger)count
 {
-//	NSMutableArray * arr = [NSMutableArray arrayWithCapacity:values->veccount];
-//	for (int j = 0; j < values->veccount; j++) {
-//		vecvalues * value = values->vecsa[j];
-//		[arr addObject:[MathFunction functionWithName:@"List"
-//										 andArguments:@(value->name),
-//													  @(value->is_scale),
-//													  @(value->is_complex),
-//													  @(value->creal),
-//													  @(value->cimag), nil]];
-//	}
-//	[_data addObject:[MathFunction functionWithName:@"List" andArgumentsArray:arr]];
+	NSMutableArray * arr = [NSMutableArray arrayWithCapacity:values->veccount];
+	for (int j = 0; j < values->veccount; j++) {
+		vecvalues * value = values->vecsa[j];
+		[arr addObject:[MathFunction functionWithName:@"List"
+										 andArguments:@(value->name),
+													  @(value->is_scale),
+													  @(value->is_complex),
+													  @(value->creal),
+													  @(value->cimag), nil]];
+	}
+	[_data addObject:[MathFunction functionWithName:@"List" andArgumentsArray:arr]];
 	
 	return 0;
 }

@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       157,          7]
-NotebookDataLength[      6955,        180]
-NotebookOptionsPosition[      6271,        151]
-NotebookOutlinePosition[      6650,        168]
-CellTagsIndexPosition[      6607,        165]
+NotebookDataLength[      8153,        215]
+NotebookOptionsPosition[      7319,        181]
+NotebookOutlinePosition[      7698,        198]
+CellTagsIndexPosition[      7655,        195]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -23,7 +23,7 @@ Cell[BoxData[
   RowBox[{"link", "=", 
    RowBox[{"Install", "[", 
     RowBox[{"LinkConnect", "[", 
-     RowBox[{"\"\<51087@192.168.0.101,51088@192.168.0.101\>\"", ",", 
+     RowBox[{"\"\<57743@192.168.0.101,57744@192.168.0.101\>\"", ",", 
       RowBox[{"LinkProtocol", "\[Rule]", "\"\<TCPIP\>\""}]}], "]"}], "]"}]}], 
   ";"}]], "Input",
  CellChangeTimes->{{3.60349039804191*^9, 3.603490404684083*^9}, {
@@ -56,7 +56,8 @@ Cell[BoxData[
    3.6035928607430773`*^9}, 3.603593065948238*^9, 3.603594019527358*^9, 
    3.603594535417016*^9, 3.603594610051922*^9, 3.6035947019598923`*^9, 
    3.6035958184114933`*^9, 3.603595896775238*^9, 3.603595990814786*^9, 
-   3.603596107699204*^9, 3.603596323765143*^9, 3.603596381299161*^9}],
+   3.603596107699204*^9, 3.603596323765143*^9, 3.603596381299161*^9, 
+   3.603654084125291*^9}],
 
 Cell[BoxData[
  RowBox[{
@@ -102,11 +103,18 @@ Cell[BoxData[
 Cell[CellGroupData[{
 
 Cell[BoxData[
- RowBox[{"MathSpice`SpiceTransient", "[", 
-  RowBox[{"1*^-9", ",", "52*^-6"}], "]"}]], "Input",
+ RowBox[{
+  RowBox[{
+   RowBox[{"d", "=", 
+    RowBox[{"MathSpice`SpiceTransient", "[", 
+     RowBox[{"1*^-9", ",", "52*^-6"}], "]"}]}], ";"}], "//", 
+  "AbsoluteTiming"}]], "Input",
  CellChangeTimes->{{3.603592254910288*^9, 3.603592257307083*^9}, 
    3.6035940633316917`*^9, 3.603594631959416*^9, {3.6035958319648848`*^9, 
-   3.603595835676791*^9}, {3.603596432853601*^9, 3.603596434763317*^9}}],
+   3.603595835676791*^9}, {3.603596432853601*^9, 3.603596434763317*^9}, {
+   3.603654089069335*^9, 3.603654089566983*^9}, {3.603654140209723*^9, 
+   3.603654161262412*^9}, {3.603654195766459*^9, 3.6036541963742847`*^9}, {
+   3.603654311221197*^9, 3.603654317391596*^9}}],
 
 Cell[BoxData[
  RowBox[{
@@ -119,7 +127,16 @@ value used\\\"\\)\[NoBreak]\"\>"}]], "Message", "MSG",
    3.603594706698785*^9, 3.603594711488904*^9}, 3.603595836657206*^9, 
    3.603595903728012*^9, 3.603595994976692*^9, {3.603596112673441*^9, 
    3.603596123668707*^9}, 3.60359632891696*^9, 3.603596385441555*^9, 
-   3.603596435336791*^9}]
+   3.603596435336791*^9, 3.603654093039462*^9, {3.6036541540133343`*^9, 
+   3.603654162063505*^9}, 3.603654196737465*^9, {3.603654318406887*^9, 
+   3.603654354042292*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+  "4.96000300000000038380676414817571640015`6.716081852447856", ",", "Null"}],
+   "}"}]], "Output",
+ CellChangeTimes->{{3.6036543228401937`*^9, 3.603654358877059*^9}}]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -136,9 +153,8 @@ Cell[BoxData[
 Cell[BoxData[
  RowBox[{
   StyleBox[
-   RowBox[{"LinkObject", "::", "linkd"}], "MessageName"], 
-  RowBox[{
-  ":", " "}], "\<\"Unable to communicate with closed link \
+   RowBox[{"LinkObject", "::", "linkd"}], "MessageName"], ":", 
+  " ", "\<\"Unable to communicate with closed link \
 \[NoBreak]\\!\\(LinkObject[\\(\\(\\\"50875@192.168.0.101,50876@192.168.0.101\\\
 \", 205, 5\\)\\)]\\)\[NoBreak]. \\!\\(\\*ButtonBox[\\\"\[RightSkeleton]\\\", \
 ButtonStyle->\\\"Link\\\", ButtonFrame->None, \
@@ -147,6 +163,20 @@ ButtonData:>\\\"paclet:ref/message/LinkObject/linkd\\\", ButtonNote -> \
  CellChangeTimes->{
   3.603592734556301*^9, {3.603592865778817*^9, 3.60359288741448*^9}, {
    3.603594119950028*^9, 3.603594145736753*^9}, 3.603594212795643*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Dimensions", "[", 
+  RowBox[{"d", "\[LeftDoubleBracket]", "2", "\[RightDoubleBracket]"}], 
+  "]"}]], "Input",
+ CellChangeTimes->{{3.6036541692238073`*^9, 3.603654188470092*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"52018", ",", "6", ",", "5"}], "}"}]], "Output",
+ CellChangeTimes->{{3.603654172718198*^9, 3.603654207565898*^9}}]
 }, Open  ]]
 },
 WindowSize->{740, 867},
@@ -167,20 +197,25 @@ CellTagsIndex->{}
 *)
 (*NotebookFileOutline
 Notebook[{
-Cell[557, 20, 2501, 38, 46, "Input"],
-Cell[3061, 60, 189, 4, 28, "Input"],
+Cell[557, 20, 2527, 39, 46, "Input"],
+Cell[3087, 61, 189, 4, 28, "Input"],
 Cell[CellGroupData[{
-Cell[3275, 68, 134, 2, 28, "Input"],
-Cell[3412, 72, 511, 15, 46, "Output"]
+Cell[3301, 69, 134, 2, 28, "Input"],
+Cell[3438, 73, 511, 15, 46, "Output"]
 }, Open  ]],
-Cell[3938, 90, 373, 9, 46, "Input"],
+Cell[3964, 91, 373, 9, 46, "Input"],
 Cell[CellGroupData[{
-Cell[4336, 103, 323, 5, 28, "Input"],
-Cell[4662, 110, 544, 11, 21, "Message"]
+Cell[4362, 104, 608, 12, 28, "Input"],
+Cell[4973, 118, 690, 13, 21, "Message"],
+Cell[5666, 133, 207, 5, 28, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[5243, 126, 345, 7, 28, "Input"],
-Cell[5591, 135, 664, 13, 42, "Message"]
+Cell[5910, 143, 345, 7, 28, "Input"],
+Cell[6258, 152, 651, 12, 42, "Message"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[6946, 169, 201, 4, 28, "Input"],
+Cell[7150, 175, 153, 3, 86, "Output"]
 }, Open  ]]
 }
 ]
