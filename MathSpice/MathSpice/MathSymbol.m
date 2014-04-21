@@ -11,6 +11,7 @@
 #import <mathlink/mathlink.h>
 
 #import "MathSpice.h"
+#import "MathFunction.h"
 
 @implementation MathSymbol {
 	NSString * _backing;
@@ -52,6 +53,21 @@
 - (int)put
 {
 	return MLPutSymbol(stdlink, _backing.UTF8String);
+}
+
+- (NSString *)context
+{
+	return [MathSpice evaluateObject:[MathFunction functionWithName:@"Context" andArguments:self, nil]];
+}
+
+- (NSString *)unquallifiedName
+{
+	return [MathSpice evaluateObject:[MathFunction functionWithName:@"SymbolName" andArguments:[MathFunction functionWithName:@"Unevaluated" andArguments:self, nil], nil]];
+}
+
+- (NSString *)fullyQuallifiedName
+{
+	return [self.context stringByAppendingString:self.unquallifiedName];
 }
 
 @end

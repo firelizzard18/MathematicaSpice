@@ -15,10 +15,10 @@
 #import "include.h"
 
 #import "MathSpice.h"
-#import "MSCommandDelegate.h"
-#import "MSTransientDelegate.h"
-#import "MSSourceDelegate.h"
-#import "MSACDelegate.h"
+#import "MSCommand.h"
+#import "MSTransientAnalysis.h"
+#import "MSSourceNetlist.h"
+#import "MSACAnalysis.h"
 
 extern void spice_exec(void);
 extern void spice_source(void);
@@ -41,12 +41,12 @@ int main(int argc, char * argv[])
 
 void spice_exec(void)
 {
-	[ms execute:[MSCommandDelegate command]];
+	[ms execute:[MSCommand command]];
 }
 
 void spice_source(void)
 {
-	[ms execute:[MSSourceDelegate command]];
+	[ms execute:[MSSourceNetlist command]];
 }
 
 void spice_data(void) {
@@ -54,11 +54,11 @@ void spice_data(void) {
 }
 
 void spice_tran(void) {
-	[ms execute:[MSTransientDelegate command]];
+	[ms execute:[MSTransientAnalysis command]];
 }
 
 void spice_ac(void) {
-	[ms execute:[MSACDelegate command]];
+	[ms execute:[MSACAnalysis command]];
 }
 
 void spice_dc(void) {

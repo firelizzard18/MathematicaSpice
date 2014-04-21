@@ -6,11 +6,11 @@
 //  Copyright (c) 2014 Computing Eureka. All rights reserved.
 //
 
-#import "MSCommandDelegate.h"
+#import "MSCommand.h"
 
 #import "MathSpice.h"
 
-@implementation MSCommandDelegate {
+@implementation MSCommand {
 	NSString * _command;
 }
 

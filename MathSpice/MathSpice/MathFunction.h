@@ -17,4 +17,9 @@
 + (instancetype)functionWithName:(NSString *)name andArgumentsArray:(NSArray *)args;
 + (instancetype)functionWithName:(NSString *)name andArguments:(id)first, ... NS_REQUIRES_NIL_TERMINATION;
 
+- (id)initWithObjects:(const id [])objects count:(NSUInteger)cnt name:(NSString *)name;
+- (id)initWithArray:(NSArray *)array name:(NSString *)name;
+
+- (NSNumber *)N;
+
 @end

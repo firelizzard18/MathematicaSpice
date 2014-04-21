@@ -8,8 +8,8 @@
 
 #import "include.h"
 
-#import "MSCommandDelegate.h"
+#import "MSCommand.h"
 
-@interface MSAnalysisDelegate : MSCommandDelegate
+@interface MSAnalysis : MSCommand
 
 @end

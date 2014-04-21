@@ -8,8 +8,8 @@
 
 #import "include.h"
 
-#import "MSAnalysisDelegate.h"
+#import "MSAnalysis.h"
 
-@interface MSTransientDelegate : MSAnalysisDelegate <MSDelegate>
+@interface MSTransientAnalysis : MSAnalysis <MSDelegate>
 
 @end

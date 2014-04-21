@@ -12,4 +12,8 @@
 
 @interface MathSymbol : NSString <MathObject>
 
+- (NSString *)context;
+- (NSString *)unquallifiedName;
+- (NSString *)fullyQuallifiedName;
+
 @end

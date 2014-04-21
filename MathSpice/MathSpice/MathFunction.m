@@ -101,4 +101,14 @@ error:
 	return [NSString stringWithFormat:@"%@[%@]", self.name, [self componentsJoinedByString:@","]];
 }
 
+- (NSNumber *)N
+{
+	NSNumber * val = [MathSpice evaluateObject:[MathFunction functionWithName:@"N" andArguments:self, nil]];
+	
+	if (![val isKindOfClass:NSNumber.class])
+		return nil;
+	
+	return val;
+}
+
 @end

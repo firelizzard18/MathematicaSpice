@@ -1,13 +1,15 @@
 //
-//  MSSourceDelegate.h
+//  MSACDelegate.h
 //  MathSpice
 //
 //  Created by Ethan Reesor on 4/20/14.
 //  Copyright (c) 2014 Computing Eureka. All rights reserved.
 //
 
-#import "MSCommandDelegate.h"
+#import "include.h"
 
-@interface MSSourceDelegate : MSCommandDelegate
+#import "MSAnalysis.h"
+
+@interface MSACAnalysis : MSAnalysis
 
 @end

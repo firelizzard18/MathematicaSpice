@@ -6,13 +6,13 @@
 //  Copyright (c) 2014 Computing Eureka. All rights reserved.
 //
 
-#import "MSTransientDelegate.h"
+#import "MSTransientAnalysis.h"
 
 #import "MathSpice.h"
 #import "MathSymbol.h"
 #import "MathFunction.h"
 
-@implementation MSTransientDelegate
+@implementation MSTransientAnalysis
 
 + (instancetype)command
 {

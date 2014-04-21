@@ -6,76 +6,60 @@
 //  Copyright (c) 2014 Computing Eureka. All rights reserved.
 //
 
-#import "MSACDelegate.h"
+#import "MSACAnalysis.h"
 
 #import "MathSpice.h"
 #import "MathSymbol.h"
 #import "MathFunction.h"
+#import "MathRule.h"
 
-@implementation MSACDelegate
+@implementation MSACAnalysis
 
 + (instancetype)command
 {
-	NSString		* mode = nil;
+	NSString		* mode = nil,
+					* rule_lhs;
 	NSNumber		* points,
 					* start,
 					* stop,
 					* dec_points = nil,
 					* oct_points = nil,
 					* lin_points = nil;
-	MathFunction	* opt;
+	MathRule		* rule;
 	
-	start = [MathSpice getObjectForPacketAndUnwrap];
-	stop = [MathSpice getObjectForPacketAndUnwrap];
+	start = [MathSpice getObjectForPacket];
+	stop = [MathSpice getObjectForPacket];
 	
 	while (MLReady(stdlink)) {
-		opt = [MathSpice getObjectForPacketAndUnwrap];
+		rule = (MathRule *)[MathRule getRuleOrObject];
 		
-		if (![opt isKindOfClass:MathFunction.class])
+		if (!rule || ![rule isKindOfClass:MathRule.class])
 			goto bad_paramU;
 		
-		if (![opt.name isEqualToString:@"Rule"])
+		if (![rule.lhs isKindOfClass:MathSymbol.class])
 			goto bad_paramU;
 		
-		if (opt.count < 2)
-			goto bad_paramU;
+		rule_lhs = [(MathSymbol *)rule.lhs fullyQuallifiedName];
 		
-		MathSymbol * rule = opt[0];
-		
-		if (![rule isKindOfClass:MathSymbol.class])
-			goto bad_paramU;
-		
-		rule = [MathSpice evaluateObject:[MathFunction functionWithName:@"StringJoin"
-														   andArguments:[MathFunction functionWithName:@"Context"
-																						  andArguments:rule, nil],
-																		[MathFunction functionWithName:@"SymbolName"
-																						  andArguments:[MathFunction functionWithName:@"Unevaluated"
-																														 andArguments:rule, nil],
-																									   nil],
-																		nil]
-				];
-		
-		id arg = opt[1];
-		
-		if ([rule isEqualToString:@"MathSpice`ACMode"])
-			mode = arg;
-		else if ([rule isEqualToString:@"MathSpice`ACPointsPerDecade"])
-			dec_points = arg;
-		else if ([rule isEqualToString:@"MathSpice`ACPointsPerOctave"])
-			oct_points = arg;
-		else if ([rule isEqualToString:@"MathSpice`ACLinearPoints"])
-			lin_points = arg;
+		if ([rule_lhs isEqualToString:@"MathSpice`ACMode"])
+			mode = (NSString *)rule.rhs;
+		else if ([rule_lhs isEqualToString:@"MathSpice`ACPointsPerDecade"])
+			dec_points = (NSNumber *)rule.rhs;
+		else if ([rule_lhs isEqualToString:@"MathSpice`ACPointsPerOctave"])
+			oct_points = (NSNumber *)rule.rhs;
+		else if ([rule_lhs isEqualToString:@"MathSpice`ACLinearPoints"])
+			lin_points = (NSNumber *)rule.rhs;
 		else
 			goto bad_paramU;
 	}
 	
 	if ([start isKindOfClass:MathFunction.class])
-		start = [MathSpice evaluateObject:[MathFunction functionWithName:@"N" andArguments:start, nil]];
+		start = [(MathFunction *)start N];
 	if (![start isKindOfClass:NSNumber.class])
 		goto bad_param1;
 	
 	if ([stop isKindOfClass:MathFunction.class])
-		stop = [MathSpice evaluateObject:[MathFunction functionWithName:@"N" andArguments:stop, nil]];
+		stop = [(MathFunction *)stop N];
 	if (![stop isKindOfClass:NSNumber.class])
 		goto bad_param2;
 	
@@ -87,21 +71,21 @@
 	if (!dec_points)
 		dec_points = @(100);
 	else if ([dec_points isKindOfClass:MathFunction.class])
-		dec_points = [MathSpice evaluateObject:[MathFunction functionWithName:@"N" andArguments:dec_points, nil]];
+		dec_points = [(MathFunction *)dec_points N];
 	if (![dec_points isKindOfClass:NSNumber.class])
 		goto bad_opt_dec;
 	
 	if (!oct_points)
 		oct_points = @(100);
 	else if ([oct_points isKindOfClass:MathFunction.class])
-		oct_points = [MathSpice evaluateObject:[MathFunction functionWithName:@"N" andArguments:oct_points, nil]];
+		oct_points = [(MathFunction *)oct_points N];
 	if (![oct_points isKindOfClass:NSNumber.class])
 		goto bad_opt_oct;
 	
 	if (!lin_points)
 		lin_points = @(100);
 	else if ([lin_points isKindOfClass:MathFunction.class])
-		lin_points = [MathSpice evaluateObject:[MathFunction functionWithName:@"N" andArguments:lin_points, nil]];
+		lin_points = [(MathFunction *)lin_points N];
 	if (![lin_points isKindOfClass:NSNumber.class])
 		goto bad_opt_lin;
 	
@@ -125,7 +109,7 @@ bad_param2:
 	goto error;
 	
 bad_paramU:
-	[MathSpice putError:@"MathSpice`SpiceAC::badParamU" withMessage:[MathSpice descriptionOfObject:opt]];
+	[MathSpice putError:@"MathSpice`SpiceAC::badParamU" withMessage:[MathSpice descriptionOfObject:rule]];
 	goto error;
 	
 bad_opt_mode:

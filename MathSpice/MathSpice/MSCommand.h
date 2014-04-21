@@ -10,7 +10,7 @@
 
 #import "MSDelegate.h"
 
-@interface MSCommandDelegate : NSObject <MSDelegate>
+@interface MSCommand : NSObject <MSDelegate>
 
 @property (readonly) BOOL failed;
 

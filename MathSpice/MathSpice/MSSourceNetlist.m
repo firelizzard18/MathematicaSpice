@@ -6,9 +6,9 @@
 //  Copyright (c) 2014 Computing Eureka. All rights reserved.
 //
 
-#import "MSSourceDelegate.h"
+#import "MSSourceNetlist.h"
 
-@implementation MSSourceDelegate
+@implementation MSSourceNetlist
 
 + (instancetype)command
 {

@@ -6,13 +6,13 @@
 //  Copyright (c) 2014 Computing Eureka. All rights reserved.
 //
 
-#import "MSAnalysisDelegate.h"
+#import "MSAnalysis.h"
 
 #import "MathSpice.h"
 #import "MathSymbol.h"
 #import "MathFunction.h"
 
-@implementation MSAnalysisDelegate {
+@implementation MSAnalysis {
 	MathFunction * _initialData;
 	NSMutableDictionary * _data;
 }
