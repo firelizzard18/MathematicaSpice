@@ -12,10 +12,7 @@
 #import "MathSymbol.h"
 #import "MathFunction.h"
 
-@implementation MSTransientDelegate {
-	MathFunction * _initialData;
-	NSMutableArray * _data;
-}
+@implementation MSTransientDelegate
 
 + (instancetype)command
 {
@@ -123,50 +120,6 @@ failed:
 	
 error:
 	return nil;
-}
-
-- (id)initWithCommand:(NSString *)command
-{
-	if (!(self = [super initWithCommand:command]))
-		return nil;
-	
-	_initialData = nil;
-	_data = @[].mutableCopy;
-	
-	return self;
-}
-
-- (int)receivedInitialData:(vecinfoall *)info
-{
-	_initialData = [MathFunction functionWithName:@"List" andArguments:nil];
-	
-	return 0;
-}
-
-- (int)receivedData:(vecvaluesall *)values count:(NSUInteger)count
-{
-//	NSMutableArray * arr = [NSMutableArray arrayWithCapacity:values->veccount];
-//	for (int j = 0; j < values->veccount; j++) {
-//		vecvalues * value = values->vecsa[j];
-//		[arr addObject:[MathFunction functionWithName:@"List"
-//										 andArguments:@(value->name),
-//													  @(value->is_scale),
-//													  @(value->is_complex),
-//													  @(value->creal),
-//													  @(value->cimag), nil]];
-//	}
-//	[_data addObject:[MathFunction functionWithName:@"List" andArgumentsArray:arr]];
-	
-	return 0;
-}
-
-- (void)putResponse
-{
-	if (self.failed)
-		return;
-	
-	MathFunction * resp = [MathFunction functionWithName:@"List" andArguments:_initialData, [MathFunction functionWithName:@"List" andArgumentsArray:_data], nil];
-	[MathSpice putPacketForObject:resp];
 }
 
 @end

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		422FD3F61904A9A700018B2F /* MSACDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 422FD3F51904A9A700018B2F /* MSACDelegate.m */; };
+		422FD3F91904AA1800018B2F /* MSAnalysisDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 422FD3F81904AA1800018B2F /* MSAnalysisDelegate.m */; };
 		428B82BD18CFE3EE00865D7D /* MathSymbol.m in Sources */ = {isa = PBXBuildFile; fileRef = 428B82BC18CFE3EE00865D7D /* MathSymbol.m */; };
 		428B82C018CFF96B00865D7D /* MathFunction.m in Sources */ = {isa = PBXBuildFile; fileRef = 428B82BF18CFF96B00865D7D /* MathFunction.m */; };
 		428FCF8F18CEA6A900499CD4 /* MSTransientDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 428FCF8E18CEA6A900499CD4 /* MSTransientDelegate.m */; };
@@ -14,6 +16,7 @@
 		42AEE4ED18C851C400162633 /* main.tm in Sources */ = {isa = PBXBuildFile; fileRef = 42FFC8FB18C8408A00C58E21 /* main.tm */; };
 		42AEE4FB18C856BA00162633 /* libstdc++.6.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 42AEE4FA18C856B900162633 /* libstdc++.6.dylib */; };
 		42EB6C7318CED16200F96BF1 /* MathSpice.m in Sources */ = {isa = PBXBuildFile; fileRef = 42EB6C7218CED16200F96BF1 /* MathSpice.m */; };
+		42F492801904581500F70F35 /* MSSourceDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 42F4927F1904581500F70F35 /* MSSourceDelegate.m */; };
 		42FFC8E918C83F0400C58E21 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 42FFC8E818C83F0400C58E21 /* main.m */; };
 		42FFC8EB18C83F0400C58E21 /* MathSpice.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = 42FFC8EA18C83F0400C58E21 /* MathSpice.1 */; };
 		42FFC8F818C83F7900C58E21 /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42FFC8F718C83F7900C58E21 /* CoreFoundation.framework */; };
@@ -47,6 +50,10 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		422FD3F41904A9A700018B2F /* MSACDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSACDelegate.h; sourceTree = "<group>"; };
+		422FD3F51904A9A700018B2F /* MSACDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSACDelegate.m; sourceTree = "<group>"; };
+		422FD3F71904AA1800018B2F /* MSAnalysisDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSAnalysisDelegate.h; sourceTree = "<group>"; };
+		422FD3F81904AA1800018B2F /* MSAnalysisDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSAnalysisDelegate.m; sourceTree = "<group>"; };
 		428B82BB18CFE3EE00865D7D /* MathSymbol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MathSymbol.h; sourceTree = "<group>"; };
 		428B82BC18CFE3EE00865D7D /* MathSymbol.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MathSymbol.m; sourceTree = "<group>"; };
 		428B82BE18CFF96B00865D7D /* MathFunction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MathFunction.h; sourceTree = "<group>"; };
@@ -62,6 +69,8 @@
 		42AEE4FA18C856B900162633 /* libstdc++.6.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libstdc++.6.dylib"; path = "usr/lib/libstdc++.6.dylib"; sourceTree = SDKROOT; };
 		42EB6C7118CED16200F96BF1 /* MathSpice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MathSpice.h; sourceTree = "<group>"; };
 		42EB6C7218CED16200F96BF1 /* MathSpice.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MathSpice.m; sourceTree = "<group>"; };
+		42F4927E1904581500F70F35 /* MSSourceDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSSourceDelegate.h; sourceTree = "<group>"; };
+		42F4927F1904581500F70F35 /* MSSourceDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSSourceDelegate.m; sourceTree = "<group>"; };
 		42FFC8E518C83F0400C58E21 /* MathSpice */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = MathSpice; sourceTree = BUILT_PRODUCTS_DIR; };
 		42FFC8E818C83F0400C58E21 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		42FFC8EA18C83F0400C58E21 /* MathSpice.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = MathSpice.1; sourceTree = "<group>"; };
@@ -107,10 +116,16 @@
 				42FFC8FB18C8408A00C58E21 /* main.tm */,
 				42FFC8EA18C83F0400C58E21 /* MathSpice.1 */,
 				428FCF8C18CEA64600499CD4 /* MSDelegate.h */,
+				422FD3F71904AA1800018B2F /* MSAnalysisDelegate.h */,
+				422FD3F81904AA1800018B2F /* MSAnalysisDelegate.m */,
 				428FCF8D18CEA6A900499CD4 /* MSTransientDelegate.h */,
 				428FCF8E18CEA6A900499CD4 /* MSTransientDelegate.m */,
+				422FD3F41904A9A700018B2F /* MSACDelegate.h */,
+				422FD3F51904A9A700018B2F /* MSACDelegate.m */,
 				428FCF9018CECA9B00499CD4 /* MSCommandDelegate.h */,
 				428FCF9118CECA9B00499CD4 /* MSCommandDelegate.m */,
+				42F4927E1904581500F70F35 /* MSSourceDelegate.h */,
+				42F4927F1904581500F70F35 /* MSSourceDelegate.m */,
 				42EB6C7118CED16200F96BF1 /* MathSpice.h */,
 				42EB6C7218CED16200F96BF1 /* MathSpice.m */,
 				428B82BB18CFE3EE00865D7D /* MathSymbol.h */,
@@ -185,9 +200,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				42EB6C7318CED16200F96BF1 /* MathSpice.m in Sources */,
+				42F492801904581500F70F35 /* MSSourceDelegate.m in Sources */,
 				428B82C018CFF96B00865D7D /* MathFunction.m in Sources */,
 				428FCF9218CECA9B00499CD4 /* MSCommandDelegate.m in Sources */,
+				422FD3F61904A9A700018B2F /* MSACDelegate.m in Sources */,
 				428FCF8F18CEA6A900499CD4 /* MSTransientDelegate.m in Sources */,
+				422FD3F91904AA1800018B2F /* MSAnalysisDelegate.m in Sources */,
 				428B82BD18CFE3EE00865D7D /* MathSymbol.m in Sources */,
 				42AEE4ED18C851C400162633 /* main.tm in Sources */,
 				42FFC8E918C83F0400C58E21 /* main.m in Sources */,

@@ -17,8 +17,11 @@
 #import "MathSpice.h"
 #import "MSCommandDelegate.h"
 #import "MSTransientDelegate.h"
+#import "MSSourceDelegate.h"
+#import "MSACDelegate.h"
 
 extern void spice_exec(void);
+extern void spice_source(void);
 extern void spice_data(void);
 extern void spice_tran(void);
 extern void spice_ac(void);
@@ -41,6 +44,11 @@ void spice_exec(void)
 	[ms execute:[MSCommandDelegate command]];
 }
 
+void spice_source(void)
+{
+	[ms execute:[MSSourceDelegate command]];
+}
+
 void spice_data(void) {
 	
 }
@@ -50,7 +58,7 @@ void spice_tran(void) {
 }
 
 void spice_ac(void) {
-	
+	[ms execute:[MSACDelegate command]];
 }
 
 void spice_dc(void) {
